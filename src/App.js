@@ -1,10 +1,13 @@
 import Header from './component/Header'
-import Task from './component/Tasks';
+import Tasks from './component/Tasks';
 import {useState, useEffect} from 'react'
 import AddTask from './component/AddTask';
 import Footer from './component/Footer';
 import About from './component/About';
-import {BrowserRouter as Router,Route} from 'react-router-dom'
+import {BrowserRouter as Router,Route, Routes} from 'react-router-dom'
+import Moon from './component/Moon'
+import Sun from './component/Sun'
+
 
 function App() {
   const [showAddTask, setshowAddTask] = useState(false)
@@ -91,21 +94,35 @@ function App() {
   }
   return (
     <Router>
+      <div>
+      <Sun/>
       <div className='container' data-testid='container'>
-        {showAddTask &&<AddTask onAdd = {addTask}/>}
-
-
+        <Moon/>
         <Header onAdd={()=>setshowAddTask(!showAddTask)} showAddTask = {showAddTask}/>
         
-        {tasks.length>0?(
-        <Task 
-          tasks = {tasks} 
-          ondelete= {deleteTask} 
-          ontoggle={toggleReminder} />
-        ):(<p style={{ color:'red'}} >No task available</p>)}
-
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                {showAddTask && <AddTask onAdd={addTask} />}
+                {tasks.length > 0 ? (
+                  <Tasks
+                    tasks={tasks}
+                    ondelete={deleteTask}
+                    ontoggle={toggleReminder}
+                  />
+                ) : (
+                  'No Tasks To Show'
+                )}
+              </>
+            }
+          />
+          <Route path='/about' element={<About />} />
+        </Routes>
       <Footer />
       </div>
+    </div>
     </Router>
 
     );

@@ -151,6 +151,11 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
+h4{
+  color:aqua;
+  font-weight: 10;
+  font-size: large;
+}
 
 .image{
   height: auto;

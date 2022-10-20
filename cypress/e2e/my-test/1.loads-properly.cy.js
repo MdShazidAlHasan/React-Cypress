@@ -9,10 +9,5 @@ describe('checkings if the loads the properly', ()=> {
         cy.visitandcheck()
 
     })
-    it('Website exists 2 ', ()=>{
-        cy.viewport('iphone-xr')
-        cy.visitandcheck( )
-
-    })
 
 })
