@@ -5,3 +5,4 @@ Cypress.Commands.add('visitandcheck', ()=>{
     cy.get('[data-testid=showtask]')
     cy.get('[data-testid=footer]')
 })
+
