@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "text": "do breakfast ",
+      "day": "Jan 2 at 8:00am",
+      "reminder": true,
+      "id": 1
+    },
+    {
+      "text": "do launch",
+      "day": "Jan 2 at 2:00pm",
+      "reminder": false,
+      "id": 2
+    },
+    {
+      "text": "do diiner ",
+      "day": "Jan 2 at 9:00pm",
+      "reminder": false,
+      "id": 3
+    },
+    {
+      "text": "Sleep",
+      "day": "11 pm",
+      "reminder": false,
+      "id": 4
+    }
+  ]
+}
